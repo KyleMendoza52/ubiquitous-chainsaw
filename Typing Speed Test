@@ -1,0 +1,29 @@
+import time
+
+def calculate_typing_speed(text, elapsed_time):
+    words = len(text.split())
+    typing_speed = words / (elapsed_time / 60)
+    return typing_speed
+
+def run_typing_speed_test():
+    print("Welcome to the Typing Speed Test!")
+    input("Press Enter to start the test: ")
+
+    start_time = time.time()
+
+    print("Type the following text:")
+    print("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+    print("Sed commodo ultrices neque, sit amet commodo ligula pretium vitae.")
+
+    typed_text = input()
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+
+    typing_speed = calculate_typing_speed(typed_text, elapsed_time)
+
+    print("Test completed!")
+    print("Your typing speed: {:.2f} words per minute".format(typing_speed))
+
+if __name__ == "__main__":
+    run_typing_speed_test()
